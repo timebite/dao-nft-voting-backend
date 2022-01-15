@@ -1,0 +1,47 @@
+<aside class="aside is-placed-left is-expanded">
+    <div class="aside-tools">
+      <div>
+        DAO NFT Voting <b class="font-black">Admin</b>
+      </div>
+    </div>
+    <div class="menu is-menu-main">
+      <p class="menu-label">General</p>
+      <ul class="menu-list">
+        <% if (page_name == "dashboard") { %>
+        <li class="active">
+          <% } else { %>
+            <li class="inactive">
+              <% } %>
+          <a href="/dashboard">
+            <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
+            <span class="menu-item-label">Dashboard</span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="menu-label">Management</p>
+      <ul class="menu-list">
+        <% if (page_name == "create-election") { %>
+          <li class="active">
+            <% } else { %>
+              <li class="inactive">
+                <% } %>
+          <a href="/elections/create-election">
+            <span class="icon"><i class="mdi mdi-vote"></i></span>
+            <span class="menu-item-label">Create Election</span>
+          </a>
+        </li>
+
+        <% if (page_name == "manage-election") { %>
+          <li class="active">
+            <% } else { %>
+              <li class="inactive">
+                <% } %>
+          <a href="/elections/manage-elections">
+            <span class="icon"><i class="mdi mdi-ballot"></i></span>
+            <span class="menu-item-label">Mange Elections</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+</aside>

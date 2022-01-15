@@ -1,0 +1,40 @@
+<script type="text/javascript" src="/js/main.js"></script>
+<script src="/js/string-similarity.min.js"></script>
+<script src="/js/sweet-alert.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css">
+<script>
+    async function showAlert(msg, type) {
+        await Swal.fire({
+            icon: type,
+            title: (type === "error") ? ('Oops...') : ('Success'),
+            text: msg,
+        })
+    }
+
+    document.addEventListener("DOMContentLoaded", async function(event) {});
+
+    async function confirmBox(title, confirmText, denyText, successMsg, denyMsg) {
+        const result = await Swal.fire({
+                            title: title,
+                            showDenyButton: true,
+                            showCancelButton: true,
+                            confirmButtonText: confirmText,
+                            denyButtonText: denyText,
+                        })
+
+        if(result.isConfirmed) {
+            Swal.fire(successMsg, '', 'success')
+            return true
+        } else if (result.isDenied) {
+            Swal.fire(denyMsg, '', 'info')
+            return false
+        }
+    }
+
+    function setDateElementValue(element, date) {
+        date = new Date(date.getTime() - new Date().getTimezoneOffset() * 60 * 1000)
+        let isoString = date.toISOString()
+        element.value = isoString.substring(0, (isoString.indexOf("T")|0) + 6|0);
+    }
+</script>

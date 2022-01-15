@@ -1,0 +1,26 @@
+<br>
+<% if(typeof errors != 'undefined'){ %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <script>
+      showAlert("<%- errors %>", "error")
+    </script>
+  </div>
+<% } %> <% if(success_msg != ''){ %>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <script>
+    showAlert("<%= success_msg %>", "success")
+  </script>
+</div>
+<% } %> <% if(error_msg != ''){ %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <script>
+    showAlert("<%= error_msg %>", "error")
+  </script>
+</div>
+<% } %> <% if(error != ''){ %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <script>
+    showAlert("<%= error %>", "error");
+  </script>
+</div>
+<% } %>

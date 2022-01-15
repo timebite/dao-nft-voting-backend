@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manage Elections - DAO NFT Voting Admin</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- FavIcon Link -->
+    <link rel="icon" href="/favicon-16x16.png" type="image/gif" sizes="16x16">
+  </head>
+<body>
+  <%- include("./partials/common-scripts") %>
+  <%- include ("./partials/messages") %>
+<div id="app">
+
+<%- include("partials/main-navbar") %>
+<%- include("partials/aside.ejs") %>
+
+<section class="is-title-bar">
+  <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+    <ul>
+      <li>Admin </li>
+      <li>Manage Election</li>
+    </ul>
+  </div>
+</section>
+<section class="section main-section">
+  <div class="card mb-6">
+    <header class="card-header">
+      <p class="card-header-title">
+        <span class="icon"><i class="mdi mdi-ballot"></i></span>
+        Edit Election
+      </p>
+    </header>
+    <div class="card-content">
+      <form method="POST" action="/elections/edit-election" autocomplete="off">
+        <div class="field">
+          <label class="label">Election Title</label>
+          <div class="field-body">
+            <div class="field">
+              <div class="control icons-left">
+                <input autocomplete="off" class="input" id="election_title" name="election_title" type="text" placeholder="Title for the election (ex: Best NFT design)" value="<%=election_name%>">
+                <span class="icon left"><i class="mdi mdi-exclamation"></i></span>
+              </div>
+            </div>
+            <label class="label">Candidates</label>
+            <div class="field">
+              <div class="control icons-left">
+                <input class="input" id="candidate_names" name="candidate_names" placeholder="$PIGGY,$RUGS,$NICE" value="<%=candidates%>">
+                <span class="icon left"><i class="mdi mdi-rename-box"></i></span>
+              </div>
+            </div>
+        </div>
+        <br>
+        <div class="field grouped">
+          <div class="control">
+            <button type="submit" class="button green">
+              Edit Election
+            </button>
+            <button class="button red" onclick="endElection()">
+              End Election
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</div>
+</body>
+<script>
+  async function endElection() {
+    event.preventDefault();
+    const toEnd = await confirmBox("Are you sure you want to end this election?", "Yes", "No", "Election Ended", "Election not ended")
+    if (toEnd == true) {
+      window.location.href = "/elections/end-election/<%=election_id%>";
+    }
+  }
+</script>
+</html>

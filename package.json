@@ -1,0 +1,39 @@
+{
+  "name": "dao-nft-voting-backend",
+  "version": "1.0.0",
+  "description": "The backend for dao-nft-voting",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timebite/dao-nft-voting-backend.git"
+  },
+  "keywords": [
+    "nft",
+    "voting",
+    "piggy"
+  ],
+  "author": "timebite",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/timebite/dao-nft-voting-backend/issues"
+  },
+  "homepage": "https://github.com/timebite/dao-nft-voting-backend#readme",
+  "dependencies": {
+    "@solana/web3.js": "^1.31.0",
+    "axios": "^0.24.0",
+    "b58": "^4.0.3",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^11.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.1.6",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  }
+}

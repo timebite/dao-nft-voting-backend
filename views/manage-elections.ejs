@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manage Elections - DAO NFT Voting Admin</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- FavIcon Link -->
+    <link rel="icon" href="/favicon-16x16.png" type="image/gif" sizes="16x16">
+  </head>
+<body>
+  <%- include("./partials/common-scripts") %>
+  <%- include ("./partials/messages") %>
+<div id="app">
+
+<%- include("partials/main-navbar") %>
+<%- include("partials/aside.ejs") %>
+
+<section class="is-title-bar">
+  <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+    <ul>
+      <li>Admin </li>
+      <li>Manage Elections</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section main-section">
+    <div class="card mb-6">
+      <header class="card-header">
+        <p class="card-header-title">
+          <span class="icon"><i class="mdi mdi-lock-pattern"></i></span>
+          Search Election
+        </p>
+      </header>
+      <div class="card-content">
+          <div class="field">
+            <div class="field-body">
+              <div class="field">
+                <div class="control icons-left">
+                  <input class="input" id="election_name" name="election_name" type="text" placeholder="Election Name">
+                  <span class="icon left"><i class="mdi mdi-file-find"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field grouped">
+            <div class="control">
+              <button id="submit_name" class="button blue">
+                Search
+              </button>
+              <button id="fetch_all" class="button blue">
+                Fetch All
+              </button>
+              <button id="fetch_all_active" class="button blue">
+                Fetch Active
+              </button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="card has-table" id="tableCard" hidden>
+      <header class="card-header">
+        <p class="card-header-title">
+          <span class="icon"><i class="mdi mdi-account-multiple"></i></span>
+          Project
+        </p>
+      </header>
+      <div class="card-content">
+        <table>
+          <thead>
+          <tr>
+            <th>Election Name</th>
+            <th>Candidates</th>
+            <th>Ended</th>
+            <th>Created At</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody id="electionListBody">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+<script src="/js/manage-elections.js"></script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard - DAO NFT Voting Admin</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- FavIcon Link -->
+    <link rel="icon" href="/favicon-16x16.png" type="image/gif" sizes="16x16">
+  </head>
+<body>
+  <%- include("./partials/common-scripts") %>
+  <%- include ("./partials/messages") %>
+<div id="app">
+  <%- include("partials/main-navbar") %>
+  <%- include("partials/aside.ejs") %>
+  
+
+<section class="is-title-bar">
+  <div class="flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0">
+    <ul>
+      <li>Admin </li>
+      <li>Dashboard</li>
+    </ul>
+  </div>
+</section>
+  <section class="section main-section">
+    <div class="grid gap-6 grid-cols-1 md:grid-cols-3 mb-6">
+      <div class="card">
+        <div class="card-content">
+          <div class="flex items-center justify-between">
+            <div class="widget-label">
+              <h3>
+                Total Elections
+              </h3>
+              <h1>
+                <%= elections_count %>
+              </h1>
+            </div>
+            <span class="icon widget-icon text-green-500"><i class="mdi mdi-ballot mdi-48px"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="flex items-center justify-between">
+            <div class="widget-label">
+              <h3>
+                Total Votes
+              </h3>
+              <h1>
+                  <%= votes_count %>
+              </h1>
+            </div>
+                <span class="icon widget-icon text-blue-500"><i class="mdi mdi-vote mdi-48px"></i></span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="flex items-center justify-between">
+            <div class="widget-label">
+              <h3>
+                Completed Elections
+              </h3>
+              <h1>
+                <%= completed_elections_count %>
+              </h1>
+            </div>
+            <span class="icon widget-icon text-red-500"><i class="mdi mdi-check mdi-48px"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
